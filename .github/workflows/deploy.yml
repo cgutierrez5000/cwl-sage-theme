@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./cwl-theme
+        working-directory: .
 
       - name: Build production assets
         run: npm run build
