@@ -32,5 +32,5 @@ jobs:
           username: ${{ secrets.SITEGROUND_FTP_USER }}
           password: ${{ secrets.SITEGROUND_FTP_PASS }}
           local-dir: ./
-          server-dir: /public_html/wp-content/themes/cwl-theme/
+          server-dir: /carlosg486.sg-host.com/public_html/wp-content/themes/cwl-theme/
          
