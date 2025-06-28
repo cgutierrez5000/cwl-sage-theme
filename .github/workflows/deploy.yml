@@ -23,7 +23,7 @@ jobs:
 
       - name: Build production assets
         run: npm run build
-        working-directory: ./cwl-theme
+        working-directory: .
 
       - name: Deploy theme via FTP to SiteGround
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
