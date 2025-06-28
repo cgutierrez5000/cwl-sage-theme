@@ -3,7 +3,7 @@ name: Deploy CWL Theme to SiteGround
 on:
   push:
     branches:
-      - main  # or your deploy branch
+      - master  # or your deploy branch
 
 jobs:
   deploy:
