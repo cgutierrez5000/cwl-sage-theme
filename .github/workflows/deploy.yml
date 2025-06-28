@@ -19,11 +19,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: .
+        working-directory: './'
 
       - name: Build production assets
         run: npm run build
-        working-directory: .
+        working-directory: './'
 
       - name: Deploy theme via FTP to SiteGround
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
