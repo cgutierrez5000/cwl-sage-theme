@@ -1,0 +1,36 @@
+name: Deploy CWL Theme to SiteGround
+
+on:
+  push:
+    branches:
+      - main  # or your deploy branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./cwl-theme
+
+      - name: Build production assets
+        run: npm run build
+        working-directory: ./cwl-theme
+
+      - name: Deploy theme via FTP to SiteGround
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.SITEGROUND_FTP_HOST }}
+          username: ${{ secrets.SITEGROUND_FTP_USER }}
+          password: ${{ secrets.SITEGROUND_FTP_PASS }}
+          local-dir: ./cwl-theme
+          server-dir: /public_html/wp-content/themes/cwl-theme
+         
