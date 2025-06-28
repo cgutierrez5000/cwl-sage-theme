@@ -16,8 +16,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          
+      - name: Install Composer dependencies
+        run: composer install --no-dev --prefer-dist
+        working-directory: './'
 
-      - name: Install dependencies
+      - name: Install Node dependencies
         run: npm install
         working-directory: './'
 
